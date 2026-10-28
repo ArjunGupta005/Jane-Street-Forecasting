@@ -1,0 +1,61 @@
+# ============================================================
+# PYTHON ENVIRONMENT
+# ============================================================
+# The virtual environment contains installed packages and can
+# be recreated from requirements.txt, so it should not be
+# committed to source control.
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# ============================================================
+# RAW JANE STREET DATA
+# ============================================================
+# The competition dataset is very large and should remain local.
+# GitHub is used for source code and configuration, not for the
+# multi-gigabyte raw market dataset.
+train.parquet/
+test.parquet/
+lags.parquet/
+kaggle_evaluation/
+
+features.csv
+responders.csv
+sample_submission.csv
+
+
+# ============================================================
+# GENERATED ARTIFACTS
+# ============================================================
+# Models, cached datasets, predictions, and experiment outputs
+# can be recreated by running the pipeline.
+models/*
+cache/*
+outputs/figures/*
+outputs/metrics/*
+outputs/predictions/*
+
+
+# Keep empty output folders in Git if placeholder files are added.
+!models/.gitkeep
+!cache/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/metrics/.gitkeep
+!outputs/predictions/.gitkeep
+
+
+# ============================================================
+# EDITOR / OPERATING SYSTEM FILES
+# ============================================================
+.vscode/
+.DS_Store
+Thumbs.db
+
+desktop.ini
+.claude/
+
+# Figures embedded in README.md
+!outputs/figures/final_*.png
